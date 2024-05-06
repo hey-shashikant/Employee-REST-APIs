@@ -1,12 +1,10 @@
 package cyborg.springboot.employee_rest_api.rest;
 
-import cyborg.springboot.employee_rest_api.DAO.EmployeeDAO;
 import cyborg.springboot.employee_rest_api.entity.Employee;
 import cyborg.springboot.employee_rest_api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,14 +23,14 @@ public class EmployeeRESTController {
     // expose "/employees" and return list of employees
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
-        return employeeService.getAllEmployees();
+        return employeeService.findAll();
     }
 
     // add mapping for GET /employees/{employeesId}
     @GetMapping("/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
 
-        Employee theEmployee = employeeService.getEmployess(employeeId);
+        Employee theEmployee = employeeService.findById(employeeId);
 
         if (theEmployee == null) {
             throw new EmployeeNotFoundException("Employee id not found - " + employeeId);
@@ -46,7 +44,7 @@ public class EmployeeRESTController {
 
         theEmployee.setId(0);
 
-        Employee dbEmployee = employeeService.saveEmployess(theEmployee);
+        Employee dbEmployee = employeeService.save(theEmployee);
 
         return dbEmployee;
     }
@@ -54,7 +52,7 @@ public class EmployeeRESTController {
     // add mapping for PUT /employees - update existing employees
     @PutMapping("/employees")
     public Employee updateEmployee(@RequestBody Employee theEmployee) {
-        Employee dbEmployee = employeeService.saveEmployess(theEmployee);
+        Employee dbEmployee = employeeService.save(theEmployee);
 
         return dbEmployee;
     }
@@ -63,13 +61,13 @@ public class EmployeeRESTController {
     @DeleteMapping("/employees/{employeeId}")
     public String deleteEmployess(@PathVariable int employeeId) {
 
-        Employee tempEmployee = employeeService.getEmployess(employeeId);
+        Employee tempEmployee = employeeService.findById(employeeId);
 
         if (tempEmployee == null) {
             throw new EmployeeNotFoundException("Employee id not found - " + employeeId);
         }
 
-        employeeService.deleteEmployess(employeeId);
+        employeeService.deleteById(employeeId);
 
         return "Deleted employee id - " + employeeId;
     }

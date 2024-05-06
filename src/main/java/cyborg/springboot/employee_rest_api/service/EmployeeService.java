@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    List<Employee> getAllEmployees();
+    List<Employee> findAll();
 
-    Employee getEmployess(int id);
+    Employee findById(int id);
 
-    Employee saveEmployess(Employee employee);
+    Employee save(Employee employee);
 
-    String deleteEmployess(int id);
+    void deleteById(int id);
 
 }
