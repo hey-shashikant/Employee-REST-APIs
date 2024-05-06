@@ -51,10 +51,16 @@ public class EmployeeRESTController {
         return dbEmployee;
     }
 
+    // add mapping for PUT /employees - update existing employees
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee theEmployee) {
+        Employee dbEmployee = employeeService.saveEmployess(theEmployee);
+
+        return dbEmployee;
+    }
+
     @ExceptionHandler
     public ResponseEntity<EmployeeErrorResponse> handleException(EmployeeNotFoundException exp) {
-
-        // create a StudentErrorResponse
 
         EmployeeErrorResponse response = new EmployeeErrorResponse();
 
@@ -62,7 +68,6 @@ public class EmployeeRESTController {
         response.setMessage(exp.getMessage());
         response.setTimeStamp(System.currentTimeMillis());
 
-        // return ResponseEntity
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 
     }
@@ -72,15 +77,12 @@ public class EmployeeRESTController {
     @ExceptionHandler
     public ResponseEntity<EmployeeErrorResponse> handleException(Exception e) {
 
-        // create a StudentErrorResponse
-
         EmployeeErrorResponse response = new EmployeeErrorResponse();
 
         response.setStatus(HttpStatus.BAD_REQUEST.value());
         response.setMessage(e.getMessage());
         response.setTimeStamp(System.currentTimeMillis());
 
-        // return ResponseEntity
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
