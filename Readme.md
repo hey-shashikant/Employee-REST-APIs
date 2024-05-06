@@ -58,3 +58,42 @@ INSERT INTO `employee` VALUES
 
 
 ```
+
+### What is DAO in Spring?
+
+
+In the context of Spring, "DAO" typically stands for "Data Access Object." It's a design pattern used to abstract and encapsulate all access to a data source, such as a database.
+
+In Spring, DAOs are often implemented as classes or interfaces that define methods for performing CRUD (Create, Read, Update, Delete) operations on data. These DAOs usually handle the low-level interactions with the database, including querying, updating, and deleting data, while the rest of the application interacts with these DAOs to access or manipulate the data.
+
+Spring provides support for DAOs through various mechanisms, including JDBC (Java Database Connectivity), JPA (Java Persistence API), and Spring Data, which simplifies the implementation of data access layers by providing repositories that can be easily configured and used within Spring applications.
+
+Overall, DAOs in Spring help to decouple the business logic of an application from the details of how data is persisted, making the codebase more modular, maintainable, and testable.
+
+
+### DAO development Process
+
+- Update db configs in application.properties
+- Create Employee entity
+- Create DAO interface
+- Create DAO implementation
+- Create REST controller to use DAO
+
+### Purpose of Service Layer
+
+- Service Facade design pattern
+- Intermediate layer for custom business logic
+- Integrate data from multiple sources(DAO/repositories)
+
+### Specialized Annotation for Services
+
+- @Service applied to Service Implementations
+- Spring will automatically register the Service implementation thanks to component scanning..
+
+### Development Process for Employee Service
+
+- Define Service interface
+- Define Service implementation, Inject the EmployeeDAO
+
+
+
