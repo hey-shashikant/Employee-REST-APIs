@@ -12,6 +12,6 @@ public interface EmployeeService {
 
     Employee saveEmployess(Employee employee);
 
-    void deleteEmployess(int id);
+    String deleteEmployess(int id);
 
 }
