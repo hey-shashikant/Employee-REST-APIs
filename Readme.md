@@ -95,5 +95,12 @@ Overall, DAOs in Spring help to decouple the business logic of an application fr
 - Define Service interface
 - Define Service implementation, Inject the EmployeeDAO
 
+### Service Layer - Best Practice
+
+- Best practice is to apply transactional boundaries at the service layer
+- It is the service layer's responsibility to manage transaction boundaries
+- For implementation code : 
+    1. Apply @Transactional on service methods
+  2. Remove @Transactional on DAO methods if they already exists
 
 
