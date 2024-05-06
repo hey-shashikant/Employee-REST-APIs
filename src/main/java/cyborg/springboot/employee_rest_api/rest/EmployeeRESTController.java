@@ -40,6 +40,17 @@ public class EmployeeRESTController {
         return theEmployee;
     }
 
+    // add mapping for POST /employees - add new employee
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee theEmployee) {
+
+        theEmployee.setId(0);
+
+        Employee dbEmployee = employeeService.saveEmployess(theEmployee);
+
+        return dbEmployee;
+    }
+
     @ExceptionHandler
     public ResponseEntity<EmployeeErrorResponse> handleException(EmployeeNotFoundException exp) {
 
