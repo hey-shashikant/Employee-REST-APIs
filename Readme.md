@@ -119,3 +119,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
 
 ```
+
+You can reduce mode code using Spring Data REST
+
+![img_2.png](img_2.png)
