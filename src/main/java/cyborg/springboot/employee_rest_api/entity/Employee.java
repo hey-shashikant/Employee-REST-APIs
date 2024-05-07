@@ -23,14 +23,14 @@ public class Employee {
 
     // define constructors
 
-//    public Employee() {
-//    }
-//
-//    public Employee(String firstName, String lastName, String email) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//    }
+    public Employee() {
+    }
+
+    public Employee(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
     // define getters & setters
 
