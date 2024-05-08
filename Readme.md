@@ -103,6 +103,8 @@ Overall, DAOs in Spring help to decouple the business logic of an application fr
     1. Apply @Transactional on service methods
   2. Remove @Transactional on DAO methods if they already exists
 
+### JPA Repository
+
 
 ### SpringBoot REST API Security 
 
@@ -119,3 +121,23 @@ Development Process
 - Add database support to Maven POM file
 - Create JDBC properties file
 - Update Spring Security Configuration to use JDBC
+=======
+In Spring Boot, a JPA repository is an interface provided by the Spring Data JPA module that allows you to interact with a database using the Java Persistence API (JPA) without writing much boilerplate code.
+
+A JPA repository typically extends the JpaRepository interface, which is part of the Spring Data JPA framework. This interface provides various methods for common database operations such as CRUD (Create, Read, Update, Delete). You don't need to implement these methods yourself; Spring Data JPA generates the necessary queries based on method names and conventions.
+
+Here's an example of how you might define a JPA repository interface in a Spring Boot application:
+
+```java
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+    // You can define custom query methods here if needed
+}
+
+```
+
+You can reduce mode code using Spring Data REST
+
+![img_2.png](img_2.png)
+
