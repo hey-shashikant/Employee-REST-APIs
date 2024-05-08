@@ -9,7 +9,7 @@ Create a REST API for the employee directory, REST Client should be able to
 
 ### REST API
 
-![img.png](img.png)
+![img.png](img/img.png)
 
 ### Development Process
 
@@ -23,7 +23,7 @@ Create a REST API for the employee directory, REST Client should be able to
 
 ### Application Architecture
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
 
 ### 1. Set-up Database dev environment
 
@@ -105,6 +105,23 @@ Overall, DAOs in Spring help to decouple the business logic of an application fr
 
 ### JPA Repository
 
+
+### SpringBoot REST API Security 
+
+Development Process
+- Create Spring Security Configuration (@Configuration)
+- Add users, passwords and roles
+
+### Restrict URLs based on Roles
+![alt text](img/image.png)
+
+### JDBC based Authentication - Development Process
+
+- Develop SQL Script to set up database tables
+- Add database support to Maven POM file
+- Create JDBC properties file
+- Update Spring Security Configuration to use JDBC
+=======
 In Spring Boot, a JPA repository is an interface provided by the Spring Data JPA module that allows you to interact with a database using the Java Persistence API (JPA) without writing much boilerplate code.
 
 A JPA repository typically extends the JpaRepository interface, which is part of the Spring Data JPA framework. This interface provides various methods for common database operations such as CRUD (Create, Read, Update, Delete). You don't need to implement these methods yourself; Spring Data JPA generates the necessary queries based on method names and conventions.
@@ -123,3 +140,4 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 You can reduce mode code using Spring Data REST
 
 ![img_2.png](img_2.png)
+
