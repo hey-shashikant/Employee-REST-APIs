@@ -104,3 +104,9 @@ Overall, DAOs in Spring help to decouple the business logic of an application fr
   2. Remove @Transactional on DAO methods if they already exists
 
 
+### SpringBoot REST API Security 
+
+Development Process
+- Create Spring Security Configuration (@Configuration)
+- Add users, passwords and roles
+
