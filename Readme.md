@@ -112,3 +112,10 @@ Development Process
 
 ### Restrict URLs based on Roles
 ![alt text](img/image.png)
+
+### JDBC based Authentication - Development Process
+
+- Develop SQL Script to set up database tables
+- Add database support to Maven POM file
+- Create JDBC properties file
+- Update Spring Security Configuration to use JDBC
