@@ -9,7 +9,7 @@ Create a REST API for the employee directory, REST Client should be able to
 
 ### REST API
 
-![img.png](img.png)
+![img.png](img/img.png)
 
 ### Development Process
 
@@ -23,7 +23,7 @@ Create a REST API for the employee directory, REST Client should be able to
 
 ### Application Architecture
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
 
 ### 1. Set-up Database dev environment
 
@@ -110,3 +110,5 @@ Development Process
 - Create Spring Security Configuration (@Configuration)
 - Add users, passwords and roles
 
+### Restrict URLs based on Roles
+![alt text](img/image.png)
